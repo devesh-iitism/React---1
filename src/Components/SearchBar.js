@@ -1,12 +1,16 @@
-function SearchBar({ onSubmit }) {
-    const handleClick = () => {
-        onSubmit();
+function SearchBar() {
+    const handleFormSubmit = (event) => {
+        event.preventDefault();
+        console.log("Enter sdkjbfskjd")    
     };
 
-    return <div>
-            <input />
-            <button onClick={handleClick}>Click me</button>
-        </div>;
+    return (
+        <div>
+            <form onSubmit={handleFormSubmit}>
+                <input />
+            </form>
+        </div>
+    );
 }
 
 export default SearchBar;
