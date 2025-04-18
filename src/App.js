@@ -1,10 +1,20 @@
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import axios from "axios";
 import BookCreate from "./Components/BookCreate";
 import BookList from "./Components/BookList";
 
 function App() {
     const [books, setBooks] = useState([]);
+
+    const fetchBooks = async () => {
+        const response = await axios.get('http://localhost:3001/books');
+
+        setBooks(response.data);
+    };
+
+    useEffect(() => {
+        fetchBooks();
+    }, []);
 
     const editBookById = (id, newTitle) => {
         const updatedBooks = books.map((book) => {
