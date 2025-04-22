@@ -2,13 +2,13 @@ import React from "react";
 import ReactDOM from "react-dom/client";
 import App from "./App";
 import './index.css';
-import BooksContext from "./Context/books";
+import { Provider } from "./Context/books";
 
 const el = document.getElementById("root");
 const root = ReactDOM.createRoot(el);
 
 root.render(
-    <BooksContext.Provider value={5}>
+    <Provider>
         <App />
-    </BooksContext.Provider>
+    </Provider>
 );
